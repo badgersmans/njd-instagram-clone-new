@@ -1,4 +1,4 @@
-import { Slot, Stack } from 'expo-router'
+import { Slot } from 'expo-router'
 import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from '@react-navigation/native'
 import { darkTheme, lightTheme } from '@/colors/theme';
@@ -12,7 +12,7 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={theme}>
       <StatusBar />
-      <Stack />
+      <Slot />
     </ThemeProvider>
   )
 }
