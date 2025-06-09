@@ -1,22 +1,14 @@
-import ThemedText from '@/components/ThemedText';
-import { useTheme } from '@react-navigation/native';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
+import posts from '@assets/data/posts.json'
+import PostListItem from '@/components/PostListItem';
 
 export default function HomeScreen() {
-  const {colors} = useTheme();
-
   return (
-    <View className='flex-1 p-1'>
-      <ThemedText>Hiii</ThemedText>
-    </View>
+    <FlatList 
+      data={posts}
+      renderItem={({item}) => (
+        <PostListItem post={item}/>
+      )}
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
