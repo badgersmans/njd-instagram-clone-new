@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 import posts from '@assets/data/posts.json'
 import PostListItem from '@/components/PostListItem';
 
@@ -9,6 +9,8 @@ export default function HomeScreen() {
       renderItem={({item}) => (
         <PostListItem post={item}/>
       )}
+      contentContainerStyle={{gap: 10}}
+      showsVerticalScrollIndicator={false}
     />
   );
 }
